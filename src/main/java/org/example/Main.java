@@ -4,16 +4,13 @@ package org.example;
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Opt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Ctrl+R or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Ctrl+D to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Cmd+F8.
-            System.out.println("i = " + i);
+        System.out.println("token: " + TokenGenerator.tokenGenerator(5));
+        System.out.println("token: " + TokenGenerator.tokenGenerator(15));
+        System.out.println("token: " + TokenGenerator.tokenGenerator(10));
+        //System.out.println("token: " + TokenGenerator.tokenGenerator(111));
+        System.out.println("tokenASCII: " + TokenGeneratorASCII.tokenGeneratorASCII(5));
+        System.out.println("tokenASCII: " + TokenGeneratorASCII.tokenGeneratorASCII(15));
+        System.out.println("tokenASCII: " + TokenGeneratorASCII.tokenGeneratorASCII(10));
+        //System.out.println("tokenASCII: " + TokenGeneratorASCII.tokenGeneratorASCII(111));
         }
     }
-}
