@@ -16,9 +16,8 @@ public class TokenGenerator {
         String regexFinal = (regex + "{" + param + "}");
         Generex generex = new Generex(regexFinal);
             // Generate random String
-        String token = generex.random();
 
-        return token;
+        return generex.random();
     }
 }
 
