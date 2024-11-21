@@ -5,7 +5,7 @@ import com.mifmif.common.regex.Generex;
 
 public class TokenGenerator {
     private static final String regex = "([a-z]|[A-Z]|[0-9]|[!@#$%^&*()])";
-    //   public static String token;
+    private static final String regex2 = "[a-zA-Z0-9!@#$%^&*()]";
     private static Generex generex;
     private static String token;
     private static String param;
