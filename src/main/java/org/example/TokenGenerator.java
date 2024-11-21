@@ -4,35 +4,23 @@ import com.mifmif.common.regex.Generex;
 
 
 public class TokenGenerator {
-    private static final String regex5 = "([a-z]|[A-Z]|[0-9]|[!@#$%^&*()]){5}";
-    private static final String regex10 = "([a-z]|[A-Z]|[0-9]|[!@#$%^&*()]){10}";
-    private static final String regex15 = "([a-z]|[A-Z]|[0-9]|[!@#$%^&*()]){15}";
+    private static final String regex = "([a-z]|[A-Z]|[0-9]|[!@#$%^&*()])";
     //   public static String token;
     private static Generex generex;
     private static String token;
+    private static String param;
 
     public static String tokenGenerator(int characters) {
 
         if (characters != 5 && characters != 10 && characters != 15) {
             throw new IllegalArgumentException("Invalid token length! Supported lengths are 5, 10, and 15.");
         }
+            param = String.valueOf(characters);
+            String regexFinal = (regex + "{" + param + "}");
+            generex = new Generex(regexFinal);
+            // Generate random String
+            token = generex.random();
 
-
-        switch (characters) {
-            case 5:
-                generex = new Generex(regex5);
-                // Generate random String
-                token = generex.random();
-                break;
-            case 10:
-                generex = new Generex(regex10);
-                token = generex.random();
-                break;
-            case 15:
-                generex = new Generex(regex15);
-                token = generex.random();
-                break;
-        }
         return token;
     }
 }
